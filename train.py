@@ -33,7 +33,9 @@ def xgboost_make_submission():
     sub_trainning_data = xgb.DMatrix(sub_trainning_data.values)
     y = bst.predict(sub_trainning_data)
     sub_user_index['label'] = y
-    pred = sub_user_index[sub_user_index['label'] >= 0.3] # try 0.25 0.35
+    sub_user_index.to_csv(func_pack.file_output_test, index=False, header=0)
+    pred = sub_user_index[sub_user_index['label'] >= 0.025]
+    sub_user_index.to_csv(func_pack.file_output_test, index=False, header=0)
     pred = pred[['user_id', 'sku_id']]
     pred = pred.groupby('user_id').first().reset_index()
     pred['user_id'] = pred['user_id'].astype(int)
