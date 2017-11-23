@@ -12,7 +12,7 @@ prediction_start_date = '2016-03-15'; prediction_end_date = '2016-04-16'
 ## Feature Engineering
 - **User related features: new_user.py**
   - raw features such as age, sex
-	- user_browse_num
+  - user_browse_num
   - user_addcart_num
   - user_delcart_num
   - user_buy_num
@@ -39,15 +39,15 @@ prediction_start_date = '2016-03-15'; prediction_end_date = '2016-04-16'
   - has_bad_comment
   - bad_comment_rate
   
-  - **Time related features: gen_feat.py**
+- **Time related features: gen_feat.py**
   - accumulate_user_feat
   - accumulate_product_feat
   
-  - **Statistic related features:
-    - sku_hot_rank
-    - brank_hot_rank
+- **Statistic related features:**
+  - sku_hot_rank
+  - brank_hot_rank
    
  ## Model and Ensemble
- XGB, LightGBM, Random Forest
+ model: XGB, LightGBM, Random Forest
  
  Ensemble method: voting
